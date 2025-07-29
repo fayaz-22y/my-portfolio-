@@ -1,0 +1,29 @@
+# Ignore ALL hidden files/directories by default
+.*
+# Except these important ones
+!.gitignore
+!.gitconfig
+!.dockerignore
+
+# Ignore Maven build artifacts
+/target/
+.m2/repository/
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Ignore system-specific files
+.bash_history
+.bash_logout
+.bashrc
+.lesshst
+.profile
+.sudo_as_admin_successful
+.viminfo
+.ssh/
+
+# Ignore build directories (if needed)
+portfolio/target/
