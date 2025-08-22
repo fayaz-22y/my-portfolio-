@@ -6,10 +6,15 @@ services:
       dockerfile: Dockerfile
     container_name: portfolio-app
     ports:
-      - "8080:8080"
+      - "80:80"
     restart: always
     networks:
       - my-network
+    volumes:
+      - my-volume:/var/lib/docker/volumes/my-volume/_data 
+
+volumes:
+  my-volume:
 
 networks:
   my-network:
