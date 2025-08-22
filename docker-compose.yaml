@@ -11,7 +11,7 @@ services:
     networks:
       - my-network
     volumes:
-      - my-volume:/var/lib/docker/volumes/my-volume/_data 
+      - my-volume:/usr/local/tomcat/webapps/ 
 
 volumes:
   my-volume:
