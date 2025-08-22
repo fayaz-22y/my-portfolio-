@@ -15,9 +15,12 @@ FROM tomcat:9-jdk17-temurin
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy the built WAR file from builder stage
-COPY --from=builder /app/target/*.war  /usr/local/tomcat/webapps/portfolio.war
+COPY --from=builder /app/target/*.war  /usr/local/tomcat/webapps/ROOT.war
 
-EXPOSE 8080
+#To change the tomcat port from 8080 to the 80 ` 
+RUN sed -i 's/port="8080"/port="80"/' /usr/local/tomcat/conf/server.xml
+
+EXPOSE 80
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
